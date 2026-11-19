@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sentinel Web — Audit &amp; pentest web pour PME et agences</title>
+  <meta name="description" content="Audits de sécurité web et API pour PME, e-commerces et agences. Tests OWASP Top 10, preuves d'exploitation reproductibles, rapport clair et remédiation priorisée.">
+  <meta name="theme-color" content="#0b1220">
+  <meta property="og:title" content="Sentinel Web — Audit &amp; pentest web">
+  <meta property="og:description" content="Trouvez les failles avant qu'elles ne soient exploitées. Audits web et API avec preuves reproductibles.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header" id="haut">
+    <div class="container header-inner">
+      <a class="brand" href="#haut" aria-label="Sentinel Web, accueil">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 2 4 7v9c0 7.2 5.1 12.3 12 14 6.9-1.7 12-6.8 12-14V7L16 2Z" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="m10 16 4.2 4.2L23 11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Sentinel<span class="brand-accent">Web</span></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navigation">
+        <span class="sr-only">Ouvrir le menu</span>
+        <span aria-hidden="true"></span>
+      </button>
+
+      <nav id="navigation" class="site-nav" aria-label="Navigation principale">
+        <a href="#services">Offres</a>
+        <a href="#methode">Méthode</a>
+        <a href="#preuves">Preuves</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-small" href="#contact">Demander un devis</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Audit web &amp; API · France</p>
+          <h1>Trouvez les failles <span class="accent">avant</span> qu'elles ne soient exploitées.</h1>
+          <p class="lead">
+            Sentinel Web réalise des tests d'intrusion sur vos sites, applications et API.
+            Chaque vulnérabilité est <strong>reproduite et prouvée</strong>, puis livrée avec
+            une remédiation priorisée — pas une liste d'alertes automatiques.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="mailto:contact@sentinel-web.fr?subject=Demande%20de%20devis%20%E2%80%94%20audit%20web">Demander un devis</a>
+            <a class="btn btn-ghost" href="#services">Voir les offres</a>
+          </div>
+          <ul class="hero-points">
+            <li>OWASP Top 10 &amp; logique métier</li>
+            <li>Preuves reproductibles (PoC)</li>
+            <li>Rapport clair pour décideurs et devs</li>
+          </ul>
+        </div>
+
+        <aside class="hero-card" aria-label="Aperçu d'un rapport">
+          <div class="card-top">
+            <span class="dot dot-red"></span><span class="dot dot-amber"></span><span class="dot dot-green"></span>
+            <span class="card-title">rapport-audit.md</span>
+          </div>
+          <div class="card-body">
+            <p><span class="tag tag-critical">Critique</span> Contournement d'authentification</p>
+            <p><span class="tag tag-high">Élevée</span> Contrôle d'accès insuffisant</p>
+            <p><span class="tag tag-medium">Moyenne</span> En-têtes de sécurité manquants</p>
+            <div class="card-line"></div>
+            <p class="card-meta">12 constats · 9 corrigés après re-test</p>
+            <p class="card-proof">curl -H "Authorization: Bearer …" /api/Users <span>→ 200</span></p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="band" aria-label="Principes">
+      <div class="container band-grid">
+        <div><strong>Autorisation écrite</strong><span>avant chaque test</span></div>
+        <div><strong>Zéro impact</strong><span>périmètre et plafond définis</span></div>
+        <div><strong>Confidentialité</strong><span>NDA sur demande</span></div>
+        <div><strong>Re-test</strong><span>preuve que les correctifs tiennent</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Offres</p>
+          <h2>Des prestations cadrées, du premier scan au re-test</h2>
+          <p>Prix indicatifs HT, ajustés après cadrage du périmètre. Chaque offre inclut un rapport écrit et une restitution orale.</p>
+        </div>
+
+        <div class="cards">
+          <article class="service">
+            <h3>Audit black-box site</h3>
+            <p class="price">400 – 900 €</p>
+            <p class="duration">1 à 2 jours</p>
+            <ul>
+              <li>Reconnaissance et cartographie</li>
+              <li>Scan OWASP Top 10</li>
+              <li>Vérification manuelle des findings</li>
+              <li>Rapport + synthèse exécutive</li>
+            </ul>
+            <a class="link-arrow" href="#contact">Demander ce format</a>
+          </article>
+
+          <article class="service service-featured">
+            <div class="ribbon">Le plus demandé</div>
+            <h3>Pentest web app</h3>
+            <p class="price">1 500 – 4 000 €</p>
+            <p class="duration">3 à 7 jours</p>
+            <ul>
+              <li>Tests authentifiés multi-rôles</li>
+              <li>Injection, XSS, accès, logique métier</li>
+              <li>API et parcours de paiement</li>
+              <li>PoC reproductibles + remédiations</li>
+              <li>Re-test des correctifs inclus*</li>
+            </ul>
+            <a class="btn btn-small" href="#contact">Demander un devis</a>
+          </article>
+
+          <article class="service">
+            <h3>Audit API</h3>
+            <p class="price">1 200 – 3 000 €</p>
+            <p class="duration">2 à 5 jours</p>
+            <ul>
+              <li>BOLA / IDOR et contrôle d'accès</li>
+              <li>Authentification et JWT</li>
+              <li>Exposition de données, rate limiting</li>
+              <li>Tests d'abus et d'énumération</li>
+            </ul>
+            <a class="link-arrow" href="#contact">Demander ce format</a>
+          </article>
+        </div>
+
+        <div class="addons">
+          <div><strong>Re-test</strong><span>+30 à 50 % de l'audit</span></div>
+          <div><strong>Abonnement Sérénité</strong><span>scan continu + audit trimestriel, 800 – 2 500 €/mois</span></div>
+          <div><strong>Formation équipe</strong><span>OWASP et bonnes pratiques, 800 – 2 000 €/jour</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="methode">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Méthode</p>
+          <h2>Un déroulé simple, des preuves à chaque étape</h2>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="step-num">01</span>
+            <h3>Cadrage</h3>
+            <p>Périmètre, comptes de test, fenêtre d'intervention, autorisation écrite et règles d'engagement.</p>
+          </li>
+          <li>
+            <span class="step-num">02</span>
+            <h3>Tests</h3>
+            <p>Reconnaissance, scan raisonné, exploitation manuelle. Chaque finding est confirmé avant d'être retenu.</p>
+          </li>
+          <li>
+            <span class="step-num">03</span>
+            <h3>Rapport</h3>
+            <p>Synthèse pour la direction, détail technique pour les développeurs, captures et commandes reproductibles.</p>
+          </li>
+          <li>
+            <span class="step-num">04</span>
+            <h3>Remédiation</h3>
+            <p>Priorisation par risque réel, échanges avec l'équipe, puis re-test pour valider les corrections.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="preuves">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Preuves</p>
+          <h2>Pas de « peut-être ». Des faits vérifiés.</h2>
+          <p>
+            Les outils automatisés produisent du bruit. La valeur d'un audit tient à la
+            <strong>vérification humaine</strong> : reproduire la faille, mesurer son impact,
+            puis proposer un correctif applicable.
+          </p>
+          <ul class="checklist">
+            <li>Chaque constat est accompagné d'une requête ou d'une capture reproductible.</li>
+            <li>Les faux positifs sont écartés et documentés.</li>
+            <li>Les tests négatifs sont mentionnés : ce qui a été tenté sans succès.</li>
+            <li>Le rapport distingue risque business et détail technique.</li>
+          </ul>
+        </div>
+        <div class="proof-cards">
+          <article class="proof-card">
+            <span class="proof-kicker">Labo · e-commerce</span>
+            <h3>12 vulnérabilités prouvées</h3>
+            <p>Dont 3 critiques : contournement d'authentification, JWT sans signature, élévation de privilèges.</p>
+          </article>
+          <article class="proof-card">
+            <span class="proof-kicker">Labo · application PHP</span>
+            <h3>De la faille à l'impact</h3>
+            <p>Injection SQL, exécution de commandes et upload de webshell documentés avec preuves.</p>
+          </article>
+          <article class="proof-card proof-card-note">
+            <p>Rapports de démonstration réalisés sur des applications volontairement vulnérables, dans un environnement isolé.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="faq">
+      <div class="container narrow">
+        <div class="section-head">
+          <p class="eyebrow">FAQ</p>
+          <h2>Questions fréquentes</h2>
+        </div>
+
+        <details>
+          <summary>Faut-il une autorisation pour tester mon site ?</summary>
+          <p>Oui, systématiquement. Un document signé définit le périmètre, les dates et les méthodes autorisées. Sans autorisation écrite, aucun test n'est lancé.</p>
+        </details>
+        <details>
+          <summary>Quelle différence avec un scan automatique ?</summary>
+          <p>Un scanner envoie des signatures et remonte des alertes, dont beaucoup de faux positifs. Un pentest vérifie chaque piste manuellement, mesure l'impact réel et fournit une preuve reproductible.</p>
+        </details>
+        <details>
+          <summary>Mes données et mon code sont-ils protégés ?</summary>
+          <p>Les accès sont limités au strict nécessaire, les artefacts sont chiffrés et supprimés après la mission. Un NDA peut être signé avant le cadrage.</p>
+        </details>
+        <details>
+          <summary>Intervenez-vous sur des sites en production ?</summary>
+          <p>Oui, avec des règles d'engagement adaptées : plafond d'impact, créneaux convenus, exclusion des actions destructrices et point de contact disponible pendant les tests.</p>
+        </details>
+        <details>
+          <summary>Que se passe-t-il après le rapport ?</summary>
+          <p>Une restitution orale permet de prioriser. Un re-test peut être planifié après vos corrections pour vérifier qu'aucune faille ne subsiste.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Parlons de votre périmètre</h2>
+          <p>Décrivez en quelques lignes votre site ou API, votre stack et vos échéances. Réponse sous un jour ouvré avec une proposition de cadrage.</p>
+          <p class="contact-mail">
+            <a href="mailto:contact@sentinel-web.fr">contact@sentinel-web.fr</a>
+          </p>
+          <p class="contact-note">Aucune donnée n'est collectée par ce site. Les échanges se font par email. Voir la <a href="confidentialite.html">politique de confidentialité</a>.</p>
+        </div>
+
+        <form class="contact-form" id="devis-form">
+          <label for="nom">Nom / structure</label>
+          <input id="nom" name="nom" type="text" autocomplete="organization" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+
+          <label for="cible">Site ou API concerné</label>
+          <input id="cible" name="cible" type="text" placeholder="https://exemple.fr" required>
+
+          <label for="besoin">Besoin</label>
+          <select id="besoin" name="besoin">
+            <option>Audit black-box site</option>
+            <option>Pentest web app</option>
+            <option>Audit API</option>
+            <option>Re-test</option>
+            <option>Abonnement / autre</option>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Contexte, stack, échéance…"></textarea>
+
+          <button class="btn" type="submit">Préparer l'email</button>
+          <p class="form-hint" id="form-hint" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="#haut">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M16 2 4 7v9c0 7.2 5.1 12.3 12 14 6.9-1.7 12-6.8 12-14V7L16 2Z" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="m10 16 4.2 4.2L23 11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Sentinel<span class="brand-accent">Web</span></span>
+        </a>
+        <p class="footer-note">Audit et test d'intrusion web &amp; API.<br>Interventions uniquement sur cibles autorisées.</p>
+      </div>
+      <nav aria-label="Liens de pied de page">
+        <a href="#services">Offres</a>
+        <a href="#methode">Méthode</a>
+        <a href="#preuves">Preuves</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div>
+        <p class="footer-note"><a href="mailto:contact@sentinel-web.fr">contact@sentinel-web.fr</a></p>
+        <p class="footer-note"><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> Sentinel Web. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
