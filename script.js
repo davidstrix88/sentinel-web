@@ -60,7 +60,7 @@
 
       var subject = 'Demande de devis — ' + (data.get('besoin') || 'audit');
       var body = lines.join('\n');
-      var href = 'mailto:contact@sentinel-web.fr'
+      var href = 'mailto:sentinelweb.contact@gmail.com'
         + '?subject=' + encodeURIComponent(subject)
         + '&body=' + encodeURIComponent(body);
 

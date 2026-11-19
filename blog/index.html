@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Un « ; » et c'est fait — Sentinel Web</title>
+  <meta name="description" content="Comment un simple point-virgule dans un champ de diagnostic permet d'exécuter une commande sur le serveur, et comment l'éviter.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="Sentinel Web, accueil">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 2 4 7v9c0 7.2 5.1 12.3 12 14 6.9-1.7 12-6.8 12-14V7L16 2Z" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="m10 16 4.2 4.2L23 11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Sentinel<span class="brand-accent">Web</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="../index.html#services">Offres</a>
+        <a href="../index.html#methode">Méthode</a>
+        <a href="./index.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu" class="legal-wrap">
+    <p class="eyebrow">Article 1 · Injection de commande</p>
+    <h1>Un « ; » et c'est fait</h1>
+    <p class="legal-updated">19 novembre 2026 · 4 min de lecture</p>
+
+    <p>
+      La semaine dernière, en rejouant un test sur une application de labo, j'ai
+      obtenu ceci en remplissant un simple champ « adresse à tester » :
+    </p>
+
+    <pre><code>uid=33(www-data) gid=33(www-data) groups=33(www-data)</code></pre>
+
+    <p>
+      L'application voulait seulement faire un <code>ping</code>. Elle a en fait
+      exécuté <code>id</code> sur le serveur. La différence tient en un caractère :
+      <code>;</code>.
+    </p>
+
+    <h2>Pourquoi ça marche</h2>
+    <p>
+      Le champ est concaténé dans une commande puis envoyé à un shell :
+    </p>
+    <pre><code>/bin/sh -c "ping -c 1 " + entrée_utilisateur</code></pre>
+    <p>
+      Le shell interprète <code>;</code>, <code>&amp;&amp;</code> ou <code>|</code>
+      comme des séparateurs. L'attaquant ajoute donc sa propre commande après
+      celle prévue. Sur un niveau de sécurité supérieur, un filtre bloquait
+      <code>;</code> et <code>&amp;&amp;</code>… mais pas le pipe <code>|</code> :
+      la faille restait exploitable. C'est exactement pour cela qu'un filtre de
+      caractères n'est pas une protection.
+    </p>
+
+    <h2>Ce que je vérifie désormais systématiquement</h2>
+    <ul class="checklist">
+      <li>L'entrée est-elle passée à un shell (<code>system</code>, <code>exec</code>, <code>popen</code>) ?</li>
+      <li>Si oui, peut-on remplacer l'appel par une liste d'arguments sans interpréteur ?</li>
+      <li>Existe-t-il une liste blanche stricte des valeurs autorisées ?</li>
+      <li>Le compte de service a-t-il le moins de privilèges possible ?</li>
+    </ul>
+
+    <h2>Le bon réflexe</h2>
+    <p>
+      Ne pas essayer de « nettoyer » la chaîne. Construire la commande avec une
+      liste d'arguments et passer l'entrée comme une donnée, jamais comme du code.
+      Et si la fonctionnalité se limite à tester une adresse IP, valider le format
+      IP et refuser tout le reste.
+    </p>
+
+    <p>
+      C'est ce type de constat — simple, reproductible, avec la commande qui le
+      prouve — que je documente dans chaque rapport. Pas une alerte de scanner :
+      une preuve.
+    </p>
+
+    <p class="legal-back"><a class="link-arrow" href="../index.html">Retour à l'accueil</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> Sentinel Web — <a href="../mentions-legales.html">Mentions légales</a> · <a href="../confidentialite.html">Confidentialité</a></p>
+    </div>
+  </footer>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>

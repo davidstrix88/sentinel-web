@@ -307,6 +307,22 @@ details p { color: var(--muted); margin: 0.8rem 0 0; font-size: 0.94rem; }
 }
 .legal-back { margin-top: 2.5rem; }
 
+/* Articles de blog */
+.legal-wrap pre {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  overflow-x: auto;
+  margin: 1.2rem 0;
+}
+.legal-wrap code {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.9em;
+  color: var(--accent);
+}
+.legal-wrap h2 { margin-top: 2rem; }
+
 /* Focus */
 a:focus-visible, button:focus-visible, summary:focus-visible {
   outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px;

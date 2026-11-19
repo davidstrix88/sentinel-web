@@ -1,5 +1,7 @@
 # Sentinel Web — site vitrine
 
+**En ligne :** <https://davidstrix88.github.io/sentinel-web/>
+
 Site statique (HTML/CSS/JS, aucune dépendance externe, aucun cookie) présentant
 les offres d'audit et de pentest web/API.
 
@@ -28,13 +30,14 @@ Ou simplement ouvrir `index.html` dans un navigateur.
 | `netlify.toml` | Configuration de déploiement Netlify |
 | `.nojekyll` | Nécessaire pour GitHub Pages (fichiers non Jekyll) |
 | `serve.sh` | Serveur local de prévisualisation |
+| `blog/index.html` | Article 1 (« Un « ; » et c'est fait ») |
 
 ## À personnaliser avant mise en ligne
 
 1. **Identité légale** : compléter `mentions-legales.html` (nom, statut, adresse,
    SIRET, directeur de publication, hébergeur) et `confidentialite.html`
    (responsable de traitement, hébergeur).
-2. **Email / domaine** : remplacer `contact@sentinel-web.fr` si besoin
+2. **Email / domaine** : remplacer `sentinelweb.contact@gmail.com` si besoin
    (`index.html`, `script.js`, pages légales).
 3. **Preuves** : les deux encarts « labo » peuvent être remplacés par des
    références client anonymisées après les premières missions.
@@ -43,6 +46,9 @@ Ou simplement ouvrir `index.html` dans un navigateur.
    consentement.
 
 ## Mise en ligne sans acheter de domaine
+
+> **Déployé le 19/11/2026 :** <https://davidstrix88.github.io/sentinel-web/>
+> Dépôt : <https://github.com/davidstrix88/sentinel-web>
 
 ### Option A — GitHub Pages (gratuit, URL `*.github.io`)
 
@@ -85,10 +91,12 @@ Ou simplement ouvrir `index.html` dans un navigateur.
 - [x] Test mobile (menu, lisibilité, formulaire).
 - [x] En-têtes de sécurité préparés (`_headers`, `netlify.toml`).
 - [x] Aucun cookie, aucune ressource tierce.
+- [x] Email de contact réellement relevé : `sentinelweb.contact@gmail.com`.
 - [ ] Identité légale complétée dans les deux pages légales.
-- [ ] Email de contact réellement relevé.
-- [ ] Test HTTPS et redirections après déploiement.
-- [ ] Aucun secret, aucune donnée client réelle dans le dépôt.
+- [x] Test HTTPS et redirections après déploiement (GitHub Pages).
+- [x] CSP et politique de referrer via balise `meta` (GitHub Pages n'applique pas `_headers`).
+- [x] Aucun secret, aucune donnée client réelle dans le dépôt.
+- [x] Article 1 du plan de contenu publié (`blog/index.html`) et lié depuis l'accueil.
 
 ## Positionnement
 
